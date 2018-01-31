@@ -39,7 +39,7 @@ body{
 
 img {
     width: 100%;
-    animation: fading 5s infinite;
+    animation: fading 9s infinite;
 }
 @keyframes fading{
     0%{

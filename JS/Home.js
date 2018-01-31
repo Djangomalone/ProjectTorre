@@ -10,5 +10,5 @@ function carosello() {
     myIndex++;
     if (myIndex > x.length) {myIndex = 1}    
     x[myIndex-1].style.display = "block";  
-    setTimeout(carosello, 5000); 
+    setTimeout(carosello, 9000); 
 }
