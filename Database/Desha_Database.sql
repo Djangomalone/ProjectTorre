@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.6
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Creato il: Mar 16, 2018 alle 00:01
--- Versione del server: 10.1.28-MariaDB
--- Versione PHP: 7.1.10
+-- Host: localhost
+-- Creato il: Apr 11, 2018 alle 18:57
+-- Versione del server: 10.1.29-MariaDB
+-- Versione PHP: 7.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `desha_database`
+-- Database: `Desha Database`
 --
 
 -- --------------------------------------------------------
@@ -47,7 +47,8 @@ CREATE TABLE `admin` (
   `Id_Admin` int(11) NOT NULL,
   `Nome_Cognome` varchar(50) NOT NULL,
   `Email` varchar(50) NOT NULL,
-  `Cellulare` varchar(11) NOT NULL
+  `Cellulare` varchar(11) NOT NULL,
+  `Password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -99,8 +100,16 @@ CREATE TABLE `utente` (
   `Email` varchar(50) NOT NULL,
   `Cellulare` varchar(11) NOT NULL,
   `CodFiscale` varchar(16) NOT NULL,
-  `Indirizzo` text NOT NULL
+  `Indirizzo` text NOT NULL,
+  `Password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dump dei dati per la tabella `utente`
+--
+
+INSERT INTO `utente` (`Id_Utente`, `Nome_Cognome`, `Email`, `Cellulare`, `CodFiscale`, `Indirizzo`, `Password`) VALUES
+(2, 'Nicolò_Torricelli', 'lordmips@gmail.com', '3279303146', 'TRRNCL98H04F257Z', 'via Bonvino 65, San Cesario S/P (MO)', 'Tnt23ernest+');
 
 --
 -- Indici per le tabelle scaricate
@@ -163,31 +172,31 @@ ALTER TABLE `abbonamento`
 -- AUTO_INCREMENT per la tabella `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `Id_Admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Id_Admin` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT per la tabella `lezione`
 --
 ALTER TABLE `lezione`
-  MODIFY `Id_Lezione` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Id_Lezione` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT per la tabella `prenotazione`
 --
 ALTER TABLE `prenotazione`
-  MODIFY `Id_Prenotazione` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Id_Prenotazione` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT per la tabella `presenza`
 --
 ALTER TABLE `presenza`
-  MODIFY `Id_Presenza` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Id_Presenza` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT per la tabella `utente`
 --
 ALTER TABLE `utente`
-  MODIFY `Id_Utente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Id_Utente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Limiti per le tabelle scaricate
