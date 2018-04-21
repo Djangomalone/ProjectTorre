@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Creato il: Apr 11, 2018 alle 18:57
+-- Creato il: Apr 21, 2018 alle 11:46
 -- Versione del server: 10.1.29-MariaDB
 -- Versione PHP: 7.2.0
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `Desha Database`
+-- Database: `desha database`
 --
 
 -- --------------------------------------------------------
@@ -37,6 +37,13 @@ CREATE TABLE `abbonamento` (
   `Lezioni_Rimaste` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dump dei dati per la tabella `abbonamento`
+--
+
+INSERT INTO `abbonamento` (`Id_Abbonamento`, `Id_Utente_Abbonamento`, `Tipologia`, `Data_Scadenza`, `Data_Attivazione`, `Lezioni_Rimaste`) VALUES
+(1, 2, '8 lezioni x 2 mesi', '2018-04-30', '2018-04-21', 8);
+
 -- --------------------------------------------------------
 
 --
@@ -45,11 +52,19 @@ CREATE TABLE `abbonamento` (
 
 CREATE TABLE `admin` (
   `Id_Admin` int(11) NOT NULL,
-  `Nome_Cognome` varchar(50) NOT NULL,
+  `NomeAdmin` varchar(50) NOT NULL,
+  `CognomeAdmin` varchar(50) NOT NULL,
   `Email` varchar(50) NOT NULL,
   `Cellulare` varchar(11) NOT NULL,
   `Password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dump dei dati per la tabella `admin`
+--
+
+INSERT INTO `admin` (`Id_Admin`, `NomeAdmin`, `CognomeAdmin`, `Email`, `Cellulare`, `Password`) VALUES
+(1, 'Vania', 'Passini', 'vania@dayoga.it', '3291404888', 'superadmin');
 
 -- --------------------------------------------------------
 
@@ -63,6 +78,13 @@ CREATE TABLE `lezione` (
   `Data_Ora_Lezione` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dump dei dati per la tabella `lezione`
+--
+
+INSERT INTO `lezione` (`Id_Lezione`, `Id_Admin_Lezione`, `Data_Ora_Lezione`) VALUES
+(1, 1, '2018-04-24 18:30:00');
+
 -- --------------------------------------------------------
 
 --
@@ -74,6 +96,13 @@ CREATE TABLE `prenotazione` (
   `Id_Utente_Prenotazione` int(11) NOT NULL,
   `Id_Lezione_Prenotazione` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dump dei dati per la tabella `prenotazione`
+--
+
+INSERT INTO `prenotazione` (`Id_Prenotazione`, `Id_Utente_Prenotazione`, `Id_Lezione_Prenotazione`) VALUES
+(1, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -88,6 +117,13 @@ CREATE TABLE `presenza` (
   `Id_Lezione_presenza` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dump dei dati per la tabella `presenza`
+--
+
+INSERT INTO `presenza` (`Id_Presenza`, `Id_Utente_Presenza`, `Id_Admin_Presenza`, `Id_Lezione_presenza`) VALUES
+(1, 2, 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -96,7 +132,8 @@ CREATE TABLE `presenza` (
 
 CREATE TABLE `utente` (
   `Id_Utente` int(11) NOT NULL,
-  `Nome_Cognome` varchar(50) NOT NULL,
+  `NomeUtente` varchar(50) NOT NULL,
+  `CognomeUtente` varchar(50) NOT NULL,
   `Email` varchar(50) NOT NULL,
   `Cellulare` varchar(11) NOT NULL,
   `CodFiscale` varchar(16) NOT NULL,
@@ -108,8 +145,8 @@ CREATE TABLE `utente` (
 -- Dump dei dati per la tabella `utente`
 --
 
-INSERT INTO `utente` (`Id_Utente`, `Nome_Cognome`, `Email`, `Cellulare`, `CodFiscale`, `Indirizzo`, `Password`) VALUES
-(2, 'Nicolò_Torricelli', 'lordmips@gmail.com', '3279303146', 'TRRNCL98H04F257Z', 'via Bonvino 65, San Cesario S/P (MO)', 'Tnt23ernest+');
+INSERT INTO `utente` (`Id_Utente`, `NomeUtente`, `CognomeUtente`, `Email`, `Cellulare`, `CodFiscale`, `Indirizzo`, `Password`) VALUES
+(2, 'Nicolò', 'Torricelli', 'lordmips@gmail.com', '3279303146', 'TRRNCL98H04F257Z', 'via Bonvino 65, San Cesario S/P (MO)', 'Tnt23ernest+');
 
 --
 -- Indici per le tabelle scaricate
@@ -166,68 +203,37 @@ ALTER TABLE `utente`
 -- AUTO_INCREMENT per la tabella `abbonamento`
 --
 ALTER TABLE `abbonamento`
-  MODIFY `Id_Abbonamento` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_Abbonamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT per la tabella `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `Id_Admin` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_Admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT per la tabella `lezione`
 --
 ALTER TABLE `lezione`
-  MODIFY `Id_Lezione` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_Lezione` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT per la tabella `prenotazione`
 --
 ALTER TABLE `prenotazione`
-  MODIFY `Id_Prenotazione` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_Prenotazione` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT per la tabella `presenza`
 --
 ALTER TABLE `presenza`
-  MODIFY `Id_Presenza` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_Presenza` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT per la tabella `utente`
 --
 ALTER TABLE `utente`
   MODIFY `Id_Utente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- Limiti per le tabelle scaricate
---
-
---
--- Limiti per la tabella `abbonamento`
---
-ALTER TABLE `abbonamento`
-  ADD CONSTRAINT `abbonamento_ibfk_1` FOREIGN KEY (`Id_Utente_Abbonamento`) REFERENCES `utente` (`Id_Utente`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Limiti per la tabella `lezione`
---
-ALTER TABLE `lezione`
-  ADD CONSTRAINT `lezione_ibfk_1` FOREIGN KEY (`Id_Admin_Lezione`) REFERENCES `admin` (`Id_Admin`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Limiti per la tabella `prenotazione`
---
-ALTER TABLE `prenotazione`
-  ADD CONSTRAINT `prenotazione_ibfk_1` FOREIGN KEY (`Id_Utente_Prenotazione`) REFERENCES `utente` (`Id_Utente`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `prenotazione_ibfk_2` FOREIGN KEY (`Id_Lezione_Prenotazione`) REFERENCES `lezione` (`Id_Lezione`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Limiti per la tabella `presenza`
---
-ALTER TABLE `presenza`
-  ADD CONSTRAINT `presenza_ibfk_1` FOREIGN KEY (`Id_Utente_Presenza`) REFERENCES `utente` (`Id_Utente`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `presenza_ibfk_2` FOREIGN KEY (`Id_Admin_Presenza`) REFERENCES `admin` (`Id_Admin`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `presenza_ibfk_3` FOREIGN KEY (`Id_Lezione_presenza`) REFERENCES `lezione` (`Id_Lezione`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

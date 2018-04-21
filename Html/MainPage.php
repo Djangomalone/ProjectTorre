@@ -10,7 +10,26 @@
                 $NRigheU = mysqli_num_rows($ResultU);
                 if($NRigheU > 0){
                     while($rowU = $ResultU->fetch_assoc()){
-                        echo "Benvenuto utente!<br>";
+                        echo "
+                            <head>
+                                <title>
+                                    UserIN!
+                                </title>
+                            </head>
+                            <body>
+                                <h1>
+                                    Ciao ";
+                            $nome = mysqli_query($connection, "SELECT NomeUtente FROM utente WHERE BINARY Password = '$varpassword'");
+                            $NRigheNome = mysqli_num_rows($nome);
+                            if($NRigheNome > 0){
+                                while($rowNome = $nome->fetch_assoc()){
+                                    echo $rowNome['NomeUtente'];
+                                }
+                            }
+                            echo "
+                           </h1>
+                            Prenota una lezione 
+                            </body>";
                     }
                 }
                 else{
