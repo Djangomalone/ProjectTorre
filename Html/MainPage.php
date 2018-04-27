@@ -28,7 +28,8 @@
                             }
                             echo "
                            </h1>
-                            Prenota una lezione 
+                            <a href='MakePrenotazioni.php'>Prenota una lezione</a>
+                            <br>
                             </body>";
                     }
                 }
