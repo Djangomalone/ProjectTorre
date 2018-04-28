@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Creato il: Apr 21, 2018 alle 11:46
+-- Creato il: Apr 28, 2018 alle 11:48
 -- Versione del server: 10.1.29-MariaDB
 -- Versione PHP: 7.2.0
 
@@ -75,15 +75,19 @@ INSERT INTO `admin` (`Id_Admin`, `NomeAdmin`, `CognomeAdmin`, `Email`, `Cellular
 CREATE TABLE `lezione` (
   `Id_Lezione` int(11) NOT NULL,
   `Id_Admin_Lezione` int(11) NOT NULL,
-  `Data_Ora_Lezione` datetime NOT NULL
+  `Data_Lezione` date NOT NULL,
+  `Ora_Lezione` time NOT NULL,
+  `Descrizione` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dump dei dati per la tabella `lezione`
 --
 
-INSERT INTO `lezione` (`Id_Lezione`, `Id_Admin_Lezione`, `Data_Ora_Lezione`) VALUES
-(1, 1, '2018-04-24 18:30:00');
+INSERT INTO `lezione` (`Id_Lezione`, `Id_Admin_Lezione`, `Data_Lezione`, `Ora_Lezione`, `Descrizione`) VALUES
+(1, 1, '2018-04-10', '18:00:00', 'Mysore Style'),
+(2, 1, '2018-04-30', '06:00:00', 'Guidata'),
+(3, 1, '2018-05-04', '06:30:00', 'Mysore Style');
 
 -- --------------------------------------------------------
 
@@ -215,7 +219,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT per la tabella `lezione`
 --
 ALTER TABLE `lezione`
-  MODIFY `Id_Lezione` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Id_Lezione` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT per la tabella `prenotazione`
