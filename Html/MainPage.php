@@ -2,10 +2,11 @@
     <body>
         <?php
             include('dbconnection.php');
+            session_start();
             $varemail = mysqli_real_escape_string($connection, $_POST['email']);
             $varpassword = mysqli_real_escape_string($connection, $_POST['password']);
             if($_POST['radioSelezione']=='Utente'){
-                $ResultU = mysqli_query($connection, "SELECT Email, Password FROM utente WHERE BINARY Email = '$varemail' AND BINARY Password='$varpassword'");
+                $ResultU = mysqli_query($connection, "SELECT Id_Utente, Email, Password FROM utente WHERE BINARY Email = '$varemail' AND BINARY Password='$varpassword'");
                 echo "Vediamo se sei entrato: <br>";
                 $NRigheU = mysqli_num_rows($ResultU);
                 if($NRigheU > 0){
@@ -26,6 +27,7 @@
                                     echo $rowNome['NomeUtente'];
                                 }
                             }
+                            $_SESSION['Id_Utente'] = $row['Id_Utente'];
                             echo "
                            </h1>
                             <a href='MakePrenotazioni.php'>Prenota una lezione</a>
@@ -39,7 +41,6 @@
             }
             if($_POST['radioSelezione']=='Maestro'){
                 $ResultA = mysqli_query($connection, "SELECT Email, Password FROM admin WHERE BINARY Email = '$varemail' AND BINARY Password='$varpassword'");
-                echo "Vediamo se sei entrato: <br>";
                 $NRigheA = mysqli_num_rows($ResultA);
                 if($NRigheA > 0){
                     while($rowA = $ResultA->fetch_assoc()){
