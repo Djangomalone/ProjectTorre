@@ -43,7 +43,7 @@
                         " . $row["NomeAdmin"] ."
                     </td>
                     <td>
-                        <button type='submit' name='bottone". $row["Id_Lezione"] ." value='". $row["Id_Lezione"] ."'>
+                        <button type='submit' name='bottonePrenota' value=". $row["Id_Lezione"] .">
                         Seleziona!
                         </button>
                     </td>

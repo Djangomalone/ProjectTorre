@@ -20,14 +20,14 @@
                             <body>
                                 <h1>
                                     Ciao ";
-                            $nome = mysqli_query($connection, "SELECT NomeUtente FROM utente WHERE BINARY Password = '$varpassword'");
+                            $nome = mysqli_query($connection, "SELECT * FROM utente WHERE BINARY Password = '$varpassword'");
                             $NRigheNome = mysqli_num_rows($nome);
                             if($NRigheNome > 0){
                                 while($rowNome = $nome->fetch_assoc()){
                                     echo $rowNome['NomeUtente'];
+                                    $_SESSION['Id_Utente'] = $rowNome['Id_Utente'];
                                 }
                             }
-                            $_SESSION['Id_Utente'] = $row['Id_Utente'];
                             echo "
                            </h1>
                             <a href='MakePrenotazioni.php'>Prenota una lezione</a>
