@@ -3,4 +3,5 @@
     if(mysqli_connect_errno()){
         echo "Connessione del cazzo" . mysqli_connect_error();
     }
+    mysqli_set_charset($connection,"utf8");
 ?>

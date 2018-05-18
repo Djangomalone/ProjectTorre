@@ -6,7 +6,7 @@
         <link rel="stylesheet" type="text/css" href="../CSS/login.css">
     </head>
     <body>
-         <form method="post" action="MainPage.php">
+         <form method="post" action="PaginaAppoggio.php">
             Email:
             <input type="text" name="email" value="">
             <br>
