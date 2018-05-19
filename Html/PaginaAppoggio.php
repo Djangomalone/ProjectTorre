@@ -1,5 +1,5 @@
 <html>
-    <form id="Caricamento" action="MainPage.php">
+    <form id="Caricamento" action="HomePage.php">
         <?php
             include('dbconnection.php');
             session_start();

@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>
-            PagePrenota
+            Desha MakePrenotazioni
         </title>
     </head>
     <?php
@@ -57,4 +57,6 @@
             </table>
             </form>";
     ?>
+    <button href="HomePage.php">Home 
+    </button>
 </html>

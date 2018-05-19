@@ -1,24 +1,20 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <title>
+            Desha Home Page
+        </title>
     </head>
-    <body>
         <?php
             header('Content-type: text/html; charset=UTF-8');
             include('dbconnection.php');
             session_start();
             if($_SESSION['varRadioSelezione']=='Utente'){
                 $ResultU = mysqli_query($connection, "SELECT Id_Utente, Email, Password FROM utente WHERE BINARY Email = '" . $_SESSION['varEmail'] . "' AND BINARY Password= '". $_SESSION['varPassword'] . "'");
-                echo "Vediamo se sei entrato: <br>";
                 $NRigheU = mysqli_num_rows($ResultU);
                 if($NRigheU > 0){
                     while($rowU = $ResultU->fetch_assoc()){
                         echo "
-                            
-                                <title>
-                                    UserIN!
-                                </title>
-                            
                             <body>
                                 <h1>
                                     Ciao ";
@@ -33,6 +29,8 @@
                             echo "
                            </h1>
                             <a href='MakePrenotazioni.php'>Prenota una lezione</a>
+                            <br>
+                            <a href='LookPrenotazioni.php'>Guarda le tue prenotazioni</a>
                             <br>
                             </body>";
                     }
@@ -54,5 +52,4 @@
                 }
             }    
         ?>
-    </body>
 </html>

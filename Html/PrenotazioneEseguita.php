@@ -1,4 +1,9 @@
 <htm>
+    <head>
+        <title>
+            Desha Prenotazione Eseguita
+        </title>
+    </head>
     <body>
         <?php
         include('dbconnection.php');
@@ -7,7 +12,7 @@
         $Lezione = $_SESSION['LezioneDesiderata'];
         $Inserimento = mysqli_query($connection, "INSERT INTO `prenotazione` (`Id_Prenotazione`, `Id_Utente_Prenotazione`, `Id_Lezione_Prenotazione`) VALUES (NULL, '$UtentePrenotante', '$Lezione');");
         if($Inserimento > 0){
-            echo "Inserimento andato a buon termine! Torna alla <a href='MainPage.php'>home</a>";
+            echo "Inserimento andato a buon termine! Torna alla <a href='HomePage.php'>home</a>";
         }
         else{
             echo "NINTA DA FER";
