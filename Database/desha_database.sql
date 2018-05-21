@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Creato il: Apr 28, 2018 alle 11:48
+-- Creato il: Mag 21, 2018 alle 17:19
 -- Versione del server: 10.1.29-MariaDB
 -- Versione PHP: 7.2.0
 
@@ -85,9 +85,16 @@ CREATE TABLE `lezione` (
 --
 
 INSERT INTO `lezione` (`Id_Lezione`, `Id_Admin_Lezione`, `Data_Lezione`, `Ora_Lezione`, `Descrizione`) VALUES
-(1, 1, '2018-04-10', '18:00:00', 'Mysore Style'),
-(2, 1, '2018-04-30', '06:00:00', 'Guidata'),
-(3, 1, '2018-05-04', '06:30:00', 'Mysore Style');
+(7, 1, '2018-06-01', '06:00:00', 'Mysore Style'),
+(8, 1, '2018-06-01', '18:00:00', 'Mysore Style'),
+(9, 1, '2018-06-02', '09:30:00', 'Lezione Guidata'),
+(10, 1, '2018-06-04', '06:30:00', 'Mysore Style'),
+(11, 1, '2018-06-04', '19:30:00', 'Lezione Guidata'),
+(12, 1, '2018-06-05', '06:30:00', 'Mysore Style'),
+(13, 1, '2018-06-05', '18:00:00', 'Mysore Style'),
+(14, 1, '2018-06-06', '06:30:00', 'Mysore Style'),
+(15, 1, '2018-06-07', '06:30:00', 'Lezione Guidata'),
+(16, 1, '2018-06-08', '06:00:00', 'Mysore Style');
 
 -- --------------------------------------------------------
 
@@ -100,13 +107,6 @@ CREATE TABLE `prenotazione` (
   `Id_Utente_Prenotazione` int(11) NOT NULL,
   `Id_Lezione_Prenotazione` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dump dei dati per la tabella `prenotazione`
---
-
-INSERT INTO `prenotazione` (`Id_Prenotazione`, `Id_Utente_Prenotazione`, `Id_Lezione_Prenotazione`) VALUES
-(1, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -136,14 +136,14 @@ INSERT INTO `presenza` (`Id_Presenza`, `Id_Utente_Presenza`, `Id_Admin_Presenza`
 
 CREATE TABLE `utente` (
   `Id_Utente` int(11) NOT NULL,
-  `NomeUtente` varchar(50) NOT NULL,
-  `CognomeUtente` varchar(50) NOT NULL,
-  `Email` varchar(50) NOT NULL,
-  `Cellulare` varchar(11) NOT NULL,
-  `CodFiscale` varchar(16) NOT NULL,
-  `Indirizzo` text NOT NULL,
-  `Password` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `NomeUtente` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `CognomeUtente` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Cellulare` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `CodFiscale` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Indirizzo` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Password` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dump dei dati per la tabella `utente`
@@ -219,13 +219,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT per la tabella `lezione`
 --
 ALTER TABLE `lezione`
-  MODIFY `Id_Lezione` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Id_Lezione` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT per la tabella `prenotazione`
 --
 ALTER TABLE `prenotazione`
-  MODIFY `Id_Prenotazione` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Id_Prenotazione` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT per la tabella `presenza`
