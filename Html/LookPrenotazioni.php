@@ -11,6 +11,7 @@
             $Data = date("Y-m-d");
             $Prenotazioni = mysqli_query($connection, "SELECT * FROM prenotazione JOIN utente ON (prenotazione.Id_Utente_Prenotazione = utente.Id_Utente) JOIN lezione ON (prenotazione.Id_Lezione_Prenotazione = lezione.Id_Lezione) WHERE Id_Utente = '" . $_SESSION['Id_Utente'] . "' AND Data_Lezione > '$Data'");
             $NPrenotazioni = mysqli_num_rows($Prenotazioni);
+            echo "<form action='Cancella Prenotazione'>";
                 if($NPrenotazioni > 0){
                     echo "
                         <table>
@@ -22,10 +23,10 @@
                                     Ora
                                 </th>
                                 <th>
-                                    Tenuta da
+                                    Descrizione
                                 </th>
                                 <th>
-                                    Descrizione
+                                    Cancella 
                                 </th>
                             </tr>";
                     while($row = $Prenotazioni->fetch_assoc()){
@@ -41,14 +42,23 @@
                             <td>
                             ". $row["Descrizione"] . "
                             </td>
+                            <td>
+                                <button type='submit' name='bottoneCancella' value=". $row["Id_Prenotazione"] .">
+                                    Seleziona!
+                                </button>
+                            </td>
                             </tr>";
                     }
                 }   
                 else {
                     echo "Nessuna lezione prenotata. <a href='MakePrenotazioni.php'>Prenotane subito una!</a>";
                 }
+            echo "</form>";
         ?>
-        <button href="HomePage.php">Home 
-        </button>
+        <form action="HomePage.php">
+            <button>
+                Home
+            </button>
+        </form>
     </body>
 </html>

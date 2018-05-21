@@ -57,6 +57,9 @@
             </table>
             </form>";
     ?>
-    <button href="HomePage.php">Home 
-    </button>
+    <form action="HomePage.php">
+            <button>
+                Home
+            </button>
+        </form>
 </html>
