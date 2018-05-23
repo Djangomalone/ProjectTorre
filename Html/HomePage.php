@@ -32,6 +32,8 @@
                             <br>
                             <a href='LookPrenotazioni.php'>Guarda le tue prenotazioni</a>
                             <br>
+                            <a href='LookLezioni.php'>Guarda le tue presenze</a>
+                            <br>
                             </body>";
                     }
                 }
