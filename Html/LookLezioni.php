@@ -9,9 +9,8 @@
             include('dbconnection.php');
             session_start();
             $Data = date("Y-m-d");
-            $LezioniPresente = mysqli_query($connection, "SELECT * FROM presenza JOIN utente ON (presenza.Id_Utente_Presenza = utente.Id_Utente) JOIN lezione ON (presenza.Id_Lezione_Presenza = lezione.Id_Lezione) WHERE Id_Utente_Presenza = '" . $_SESSION['Id_Utente'] . "' AND Data_Lezione > '$Data'");
+            $LezioniPresente = mysqli_query($connection, "SELECT * FROM presenza JOIN utente ON (presenza.Id_Utente_Presenza = utente.Id_Utente) JOIN lezione ON (presenza.Id_Lezione_Presenza = lezione.Id_Lezione) WHERE Id_Utente_Presenza = '" . $_SESSION["Id_Utente"] . "'");
             $NLezioni = mysqli_num_rows($LezioniPresente);
-            echo "<form method = 'post' action='CancellaPrenotazione.php'>";
                 if($NLezioni > 0){
                     echo "
                         <table>
@@ -24,9 +23,6 @@
                                 </th>
                                 <th>
                                     Descrizione
-                                </th>
-                                <th>
-                                    Cancella 
                                 </th>
                             </tr>";
                     while($row = $LezioniPresente->fetch_assoc()){
@@ -42,18 +38,12 @@
                             <td>
                             ". $row["Descrizione"] . "
                             </td>
-                            <td>
-                                <button type='submit' name='bottoneCancella' value=". $row["Id_Prenotazione"] .">
-                                    Seleziona
-                                </button>
-                            </td>
                             </tr>";
                     }
                 }   
                 else {
                     echo "Nessuna presenza a lezione!";
                 }
-            echo "</form>";
         ?>
         <form action="HomePage.php">
             <button>

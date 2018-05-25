@@ -28,9 +28,9 @@
                             }
                             echo "
                            </h1>
-                            <a href='MakePrenotazioni.php'>Prenota una lezione</a>
+                            <a href='Prenotazioni/MakePrenotazioni.php'>Prenota una lezione</a>
                             <br>
-                            <a href='LookPrenotazioni.php'>Guarda le tue prenotazioni</a>
+                            <a href='Prenotazioni/LookPrenotazioni.php'>Guarda le tue prenotazioni</a>
                             <br>
                             <a href='LookLezioni.php'>Guarda le tue presenze</a>
                             <br>

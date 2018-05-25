@@ -6,7 +6,7 @@
     </head>
     <body>
         <?php
-            include('dbconnection.php');
+            include('../dbconnection.php');
             session_start();
             $Data = date("Y-m-d");
             $Prenotazioni = mysqli_query($connection, "SELECT * FROM prenotazione JOIN utente ON (prenotazione.Id_Utente_Prenotazione = utente.Id_Utente) JOIN lezione ON (prenotazione.Id_Lezione_Prenotazione = lezione.Id_Lezione) WHERE Id_Utente_Prenotazione = '" . $_SESSION['Id_Utente'] . "' AND Data_Lezione > '$Data'");
@@ -55,7 +55,7 @@
                 }
             echo "</form>";
         ?>
-        <form action="HomePage.php">
+        <form action="../HomePage.php">
             <button>
                 Home
             </button>

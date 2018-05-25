@@ -5,7 +5,7 @@
         </title>
     </head>
     <?php
-        include('dbconnection.php');
+        include('../dbconnection.php');
         $Data = date("Y-m-d");
         echo $Data;
         echo "<br>";
@@ -57,7 +57,7 @@
             </table>
             </form>";
     ?>
-    <form action="HomePage.php">
+    <form action="../HomePage.php">
             <button>
                 Home
             </button>
