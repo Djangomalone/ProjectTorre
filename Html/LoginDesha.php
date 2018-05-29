@@ -13,11 +13,6 @@
             Password:
             <input type="password" name="password" value="">
             <br>
-            <input type="radio" name="radioSelezione" value="Maestro">
-            Maestro
-            <input type="radio" name="radioSelezione" value="Utente" checked>
-            Utente
-            <br>
             <button type="submit" name="login">
                 Accedi
             </button>
