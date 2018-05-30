@@ -5,6 +5,7 @@
             Desha Home Page
         </title>
     </head>
+    <body>
         <?php
             header('Content-type: text/html; charset=UTF-8');
             include('dbconnection.php');
@@ -17,32 +18,41 @@
                     while($rowU = $ResultU->fetch_assoc()){
                         $_SESSION['Id_Utente'] = $rowU['Id_Utente'];
                         echo "
-                            <body>
-                                <h1>
-                                    Ciao ". $rowU['NomeUtente'] ."</h1>";
-                            echo "
+                            <h1>
+                                Ciao ". $rowU['NomeUtente'] ."
+                            </h1>
                             <a href='Prenotazioni/MakePrenotazioni.php'>Prenota una lezione</a>
                             <br>
                             <a href='Prenotazioni/LookPrenotazioni.php'>Guarda le tue prenotazioni</a>
                             <br>
                             <a href='LookLezioni.php'>Guarda le tue presenze</a>
-                            <br>
-                            </body>";
+                            <br>";
                     }
                 }
                 else if($NRigheA > 0){
                     while($rowA = $ResultA->fetch_assoc()){
                         $_SESSION['Id_Admin'] = $rowA['Id_Admin'];
-                        echo "<h1>Benvenuto maestro!</h1>";
+                        echo "
+                                <h1>
+                                    Benvenuto maestro!
+                                </h1>
+                                <a href='AdminLezioni.php'>Lezioni</a><br>
+                                <a href=''>Prenotazioni</a><br>
+                                <a href=''></a><br>
+                                <a href=''></a><br>
+                                <a href=''></a><br>
+                                <a href=''></a><br>
+                                ";
                     }
                 }
                 else{
                     echo "LOGIN ERRATO: EMAIL O PASSWORD NON CORRETTI";
                 }    
         ?>
-    <form action="LoginDesha.php">
+    <form action="PaginaDisconnessione.php">
         <button>
             Disconnettiti
         </button>
     </form>
+    </body>
 </html>
