@@ -3,7 +3,7 @@
         <?php
             include('dbconnection.php');
             session_start();
-            $_SESSION['Id_Utente'] = '';
+            session_destroy();
         ?>
     </form>
 </html>
