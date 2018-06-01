@@ -20,8 +20,7 @@
             }
             else{
                 $Inserimento = mysqli_query($connection, "INSERT INTO `lezione` (`Id_Lezione`, `Id_Admin_Lezione`, `Data_Lezione`, `Ora_Lezione`, `Descrizione`) VALUES (NULL, '$Id_Admin', '$Data', '$Ora', '$Descrizione')");
-                $NInserimento = mysqli_num_rows($Inserimento);
-                if($NInserimento > 0){
+                if($Inserimento > 0){
                     echo "Inserimento andato a buon fine. <a href='HomePage.php'>Torna alla home</a>";
                 }
                 else{
