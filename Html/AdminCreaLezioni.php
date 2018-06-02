@@ -11,7 +11,7 @@
         <input type="time" name="OraLezione" required><br>
         Inserisci una descrizione:<br>
         <input type="text" name="DescrizioneLezione"><br>
-        <input type="submit" value="Crea Lezione">
+        Inserisci Maestro:
         <select name="Maestrp" id="Selettore">
             <?php
                 include('dbconnection.php');
@@ -20,7 +20,8 @@
                     echo "<option>". $row['NomeAdmin'] ."</option>";
                 }
             ?>
-        </select>
+        </select><br>
+        <input type="submit" value="Crea Lezione">
     </form>
     <form action="AdminLezioni.php">
         <button>
