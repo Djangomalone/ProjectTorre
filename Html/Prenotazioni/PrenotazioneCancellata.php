@@ -12,7 +12,7 @@
         $Prenotazione = $_SESSION['PrenotazioneDesiderata'];
         $Cancellazione = mysqli_query($connection, "DELETE FROM prenotazione WHERE prenotazione.Id_Prenotazione = $Prenotazione");
         if($Cancellazione > 0){
-            echo "Cancellazione andata a buon termine! Torna alla <a href='../HomePage.php'>home</a>";
+            echo "Cancellazione andata a buon termine! Controlla le <a href='LookPrenotazioni.php'>prenotazioni</a>";
         }
         else{
             echo "NINTA DA FER";

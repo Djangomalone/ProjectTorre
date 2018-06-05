@@ -12,7 +12,7 @@
         $Lezione = $_SESSION['LezioneDesiderata'];
         $Inserimento = mysqli_query($connection, "INSERT INTO `prenotazione` (`Id_Prenotazione`, `Id_Utente_Prenotazione`, `Id_Lezione_Prenotazione`) VALUES (NULL, '$UtentePrenotante', '$Lezione');");
         if($Inserimento > 0){
-            echo "Inserimento andato a buon termine! Torna alla <a href='../HomePage.php'>home</a>";
+            echo "Inserimento andato a buon termine! Controlla le <a href='LookPrenotazioni.php'>prenotazioni</a>";
         }
         else{
             echo "NINTA DA FER";
