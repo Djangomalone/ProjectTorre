@@ -9,7 +9,7 @@
             include('dbconnection.php');
             session_start();
             $Data = date("Y-m-d");
-            $Lezioni = mysqli_query($connection, "SELECT * FROM lezione WHERE Data_Lezione >= '$Data' ORDER BY Data_Lezione");
+            $Lezioni = mysqli_query($connection, "SELECT * FROM lezione JOIN admin ON (Id_Admin_Lezione = Id_Admin) WHERE Data_Lezione >= '$Data' ORDER BY Data_Lezione");
             $NLezioni = mysqli_num_rows($Lezioni);
                 if($NLezioni > 0){
                     echo "
@@ -23,6 +23,9 @@
                                 </th>
                                 <th>
                                     Descrizione
+                                </th>
+                                <th>
+                                    Tenuta da
                                 </th>
                                 <th>
                                     Modifica
@@ -43,6 +46,9 @@
                             </td>
                             <td>
                             ". $row["Descrizione"] . "
+                            </td>
+                            <td>
+                            ". $row["NomeAdmin"] . "
                             </td>
                             <form method = 'post' action='AdminModificaLezioni.php'>
                             <td>
@@ -65,9 +71,9 @@
                     echo "Nessuna lezione presente. <a href='AdminCreaLezioni.php'>Creane subito una!</a>";
                 }
         ?>
-        <form action="HomePage.php">
+        <form action="AdminLezioni.php">
             <button>
-                Home
+                Menù Lezioni
             </button>
         </form>
     </body>

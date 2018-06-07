@@ -4,7 +4,7 @@
             Crea Lezione
         </title>
     </head>
-    <form method="post" action="CreaLezione.php">
+    <form method="post" action="AdminLezioneCreata.php">
         Inserisci data: <br>
         <input type="date" name="DataLezione" required><br>
         Inserisci ora: <br>

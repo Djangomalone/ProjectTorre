@@ -6,9 +6,10 @@
     </head>
     <?php
         include('dbconnection.php');
+        session_start();
         $LezioneDesiderata = mysqli_real_escape_string($connection, $_POST['bottoneModifica']);
         $_SESSION['LezioneDesiderata'] = $LezioneDesiderata;
-        $Lezioni = mysqli_query($connection, "SELECT * FROM lezione JOIN admin ON (Id_Admin_Lezione = Id_Admin) WHERE Id_Lezione = '$LezioneDesiderata'");
+        $Lezioni = mysqli_query($connection, "SELECT * FROM lezione WHERE Id_Lezione = '$LezioneDesiderata'");
         while($Arrow = $Lezioni->fetch_assoc()){
             $Data = $Arrow['Data_Lezione'];
             $Ora = $Arrow['Ora_Lezione'];
