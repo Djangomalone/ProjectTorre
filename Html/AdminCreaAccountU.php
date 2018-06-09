@@ -4,28 +4,28 @@
             Crea Account Utente
         </title>
     </head>
-    <form method="post" action="AdminLezioneCreata.php">
-        Inserisci data: <br>
-        <input type="date" name="DataLezione" required><br>
-        Inserisci ora: <br>
-        <input type="time" name="OraLezione" required><br>
-        Inserisci una descrizione:<br>
-        <input type="text" name="DescrizioneLezione"><br>
-        Inserisci Maestro:
-        <select name="Maestrp" id="Selettore">
-            <?php
-                include('dbconnection.php');
-                $Maestri = mysqli_query($connection, "SELECT * FROM admin");
-                while($row = $Maestri->fetch_assoc()){
-                    echo "<option>". $row['NomeAdmin'] ."</option>";
-                }
-            ?>
-        </select><br>
-        <input type="submit" value="Crea Lezione">
+    <form method="post" action="AdminUtenteCreato.php">
+        Inserisci nome: <br>
+        <input type="text" name="Nome" required><br>
+        Inserisci cognome: <br>
+        <input type="text" name="Cognome" required><br>
+        Inserisci e-mail:<br>
+        <input type="text" name="Email"><br>
+        Inserisci cellulare:<br>
+        <input type="text" name="Cellulare"><br>
+        Inserisci codice fiscale:<br>
+        <input type="text" name="CodiceFiscale"><br>
+        Inserisci indirizzo:<br>
+        <input type="text" name="Indirizzo"><br>
+        Inserisci Password:<br>
+        <input type="password" name="Password"><br>
+        Conferma Password:<br>
+        <input type="password" name="ConfermaPassword"><br>
+        <input type="submit" value="Crea Utente">
     </form>
-    <form action="AdminLezioni.php">
+    <form action="AdminAccount.php">
         <button>
-            Torna al menù lezioni
+            Torna al menù account
         </button>
     </form>
 </html>
