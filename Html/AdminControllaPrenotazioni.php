@@ -1,17 +1,17 @@
 <html>
     <head>
         <title>
-            Desha Controlla Prenotazioni
+            Admin Controlla Prenotazioni
         </title>
     </head>
     <body>
         <?php
-            include('../dbconnection.php');
+            include('dbconnection.php');
             session_start();
             $Data = date("Y-m-d");
-            $Prenotazioni = mysqli_query($connection, "SELECT * FROM prenotazione JOIN utente ON (prenotazione.Id_Utente_Prenotazione = utente.Id_Utente) JOIN lezione ON (prenotazione.Id_Lezione_Prenotazione = lezione.Id_Lezione) WHERE Id_Utente_Prenotazione = '" . $_SESSION['Id_Utente'] . "' AND Data_Lezione > '$Data' ORDER BY Data_Lezione");
+            $Id = $_SESSION['Id_Admin'];
+            $Prenotazioni = mysqli_query($connection, "SELECT * FROM prenotazione JOIN utente ON (prenotazione.Id_Utente_Prenotazione = utente.Id_Utente) JOIN lezione ON (prenotazione.Id_Lezione_Prenotazione = lezione.Id_Lezione) WHERE Data_Lezione > '$Data' AND Id_Admin_Lezione = $Id ORDER BY Data_Lezione");
             $NPrenotazioni = mysqli_num_rows($Prenotazioni);
-            echo "<form method = 'post' action='CancellaPrenotazione.php'>";
                 if($NPrenotazioni > 0){
                     echo "
                         <table>
@@ -26,7 +26,10 @@
                                     Descrizione
                                 </th>
                                 <th>
-                                    Cancella 
+                                    Nome Utente
+                                </th>
+                                <th>
+                                    Cognome Utente
                                 </th>
                             </tr>";
                     while($row = $Prenotazioni->fetch_assoc()){
@@ -43,19 +46,19 @@
                             ". $row["Descrizione"] . "
                             </td>
                             <td>
-                                <button type='submit' name='bottoneCancella' value=". $row["Id_Prenotazione"] .">
-                                    Seleziona
-                                </button>
+                            ". $row["NomeUtente"] . "
+                            </td>
+                            <td>
+                            ". $row["CognomeUtente"] . "
                             </td>
                             </tr>";
                     }
                 }   
                 else {
-                    echo "Nessuna lezione prenotata. <a href='MakePrenotazioni.php'>Prenotane subito una!</a>";
+                    echo "Nessuna prenotazione presente per le tue lezioni!";
                 }
-            echo "</form>";
         ?>
-        <form action="../HomePage.php">
+        <form action="HomePage.php">
             <button>
                 Home
             </button>
