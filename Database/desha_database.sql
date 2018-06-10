@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Creato il: Mag 21, 2018 alle 17:19
+-- Creato il: Giu 10, 2018 alle 13:13
 -- Versione del server: 10.1.29-MariaDB
 -- Versione PHP: 7.2.0
 
@@ -52,11 +52,11 @@ INSERT INTO `abbonamento` (`Id_Abbonamento`, `Id_Utente_Abbonamento`, `Tipologia
 
 CREATE TABLE `admin` (
   `Id_Admin` int(11) NOT NULL,
-  `NomeAdmin` varchar(50) NOT NULL,
-  `CognomeAdmin` varchar(50) NOT NULL,
-  `Email` varchar(50) NOT NULL,
-  `Cellulare` varchar(11) NOT NULL,
-  `Password` varchar(50) NOT NULL
+  `NomeAdmin` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `CognomeAdmin` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Email` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Cellulare` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Password` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -64,7 +64,8 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`Id_Admin`, `NomeAdmin`, `CognomeAdmin`, `Email`, `Cellulare`, `Password`) VALUES
-(1, 'Vania', 'Passini', 'vania@dayoga.it', '3291404888', 'superadmin');
+(2, 'Tommaso', 'Ricchi', 'tomma@gmail.com', '3333456677', '473856c979caf794b04ae5dbc21a8110544da77b'),
+(3, 'Vania', 'Passini', 'vania@dayoga.it', '3291404888', '32668cae1c8fdf3b24a8afc40edc78c0b7da39ca');
 
 -- --------------------------------------------------------
 
@@ -85,16 +86,7 @@ CREATE TABLE `lezione` (
 --
 
 INSERT INTO `lezione` (`Id_Lezione`, `Id_Admin_Lezione`, `Data_Lezione`, `Ora_Lezione`, `Descrizione`) VALUES
-(7, 1, '2018-06-01', '06:00:00', 'Mysore Style'),
-(8, 1, '2018-06-01', '18:00:00', 'Mysore Style'),
-(9, 1, '2018-06-02', '09:30:00', 'Lezione Guidata'),
-(10, 1, '2018-06-04', '06:30:00', 'Mysore Style'),
-(11, 1, '2018-06-04', '19:30:00', 'Lezione Guidata'),
-(12, 1, '2018-06-05', '06:30:00', 'Mysore Style'),
-(13, 1, '2018-06-05', '18:00:00', 'Mysore Style'),
-(14, 1, '2018-06-06', '06:30:00', 'Mysore Style'),
-(15, 1, '2018-06-07', '06:30:00', 'Lezione Guidata'),
-(16, 1, '2018-06-08', '06:00:00', 'Mysore Style');
+(31, 1, '2018-06-27', '15:00:00', 'Lezione Guidata');
 
 -- --------------------------------------------------------
 
@@ -107,6 +99,14 @@ CREATE TABLE `prenotazione` (
   `Id_Utente_Prenotazione` int(11) NOT NULL,
   `Id_Lezione_Prenotazione` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dump dei dati per la tabella `prenotazione`
+--
+
+INSERT INTO `prenotazione` (`Id_Prenotazione`, `Id_Utente_Prenotazione`, `Id_Lezione_Prenotazione`) VALUES
+(4, 3, 8),
+(5, 2, 31);
 
 -- --------------------------------------------------------
 
@@ -126,7 +126,8 @@ CREATE TABLE `presenza` (
 --
 
 INSERT INTO `presenza` (`Id_Presenza`, `Id_Utente_Presenza`, `Id_Admin_Presenza`, `Id_Lezione_presenza`) VALUES
-(1, 2, 1, 1);
+(1, 2, 1, 1),
+(2, 2, 1, 16);
 
 -- --------------------------------------------------------
 
@@ -142,7 +143,7 @@ CREATE TABLE `utente` (
   `Cellulare` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL,
   `CodFiscale` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Indirizzo` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Password` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
+  `Password` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -150,7 +151,8 @@ CREATE TABLE `utente` (
 --
 
 INSERT INTO `utente` (`Id_Utente`, `NomeUtente`, `CognomeUtente`, `Email`, `Cellulare`, `CodFiscale`, `Indirizzo`, `Password`) VALUES
-(2, 'Nicolò', 'Torricelli', 'lordmips@gmail.com', '3279303146', 'TRRNCL98H04F257Z', 'via Bonvino 65, San Cesario S/P (MO)', 'Tnt23ernest+');
+(7, 'Nicolò', 'Torricelli', 'lordmips@gmail.com', '3279303146', 'TRRNCL98H04F257Z', 'via Bonvino 65, San Cesario S/P', 'dab5616a76c219518461f2f1f732decffb645f8b'),
+(8, 'Barbara', 'Vecchi', 'bvmips@hotmail.com', '3392654755', 'VCCBBR70D69F257O', 'via Bonvino 65, San Cesario S/P', 'a2bc776ac5d36e160d684b137777cc69608f3ce8');
 
 --
 -- Indici per le tabelle scaricate
@@ -213,31 +215,31 @@ ALTER TABLE `abbonamento`
 -- AUTO_INCREMENT per la tabella `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `Id_Admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Id_Admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT per la tabella `lezione`
 --
 ALTER TABLE `lezione`
-  MODIFY `Id_Lezione` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `Id_Lezione` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT per la tabella `prenotazione`
 --
 ALTER TABLE `prenotazione`
-  MODIFY `Id_Prenotazione` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_Prenotazione` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT per la tabella `presenza`
 --
 ALTER TABLE `presenza`
-  MODIFY `Id_Presenza` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Id_Presenza` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT per la tabella `utente`
 --
 ALTER TABLE `utente`
-  MODIFY `Id_Utente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Id_Utente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

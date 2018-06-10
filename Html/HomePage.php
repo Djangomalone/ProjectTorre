@@ -10,9 +10,11 @@
             header('Content-type: text/html; charset=UTF-8');
             include('dbconnection.php');
             session_start();
-                $ResultU = mysqli_query($connection, "SELECT * FROM utente WHERE BINARY Email = '" . $_SESSION['varEmail'] . "' AND BINARY Password= '". $_SESSION['varPassword'] . "'");
+                $salt = "YL!_D55v@3cnL6Gro6dAvLRgADpSC)B%@enk_Orz";
+                $Pass_Cript = sha1($salt . $_SESSION['varPassword']);
+                $ResultU = mysqli_query($connection, "SELECT * FROM utente WHERE BINARY Email = '" . $_SESSION['varEmail'] . "' AND BINARY Password= '". $Pass_Cript . "'");
                 $NRigheU = mysqli_num_rows($ResultU);
-                $ResultA = mysqli_query($connection, "SELECT * FROM admin WHERE BINARY Email = '" . $_SESSION['varEmail'] . "' AND BINARY Password='" . $_SESSION['varPassword'] . "'");
+                $ResultA = mysqli_query($connection, "SELECT * FROM admin WHERE BINARY Email = '" . $_SESSION['varEmail'] . "' AND BINARY Password='" . $Pass_Cript . "'");
                 $NRigheA = mysqli_num_rows($ResultA);
                 if($NRigheU > 0){
                     while($rowU = $ResultU->fetch_assoc()){
