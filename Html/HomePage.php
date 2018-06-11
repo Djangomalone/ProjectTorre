@@ -28,7 +28,8 @@
                             <a href='Prenotazioni/LookPrenotazioni.php'>Guarda le tue prenotazioni</a>
                             <br>
                             <a href='LookLezioni.php'>Guarda le tue presenze</a>
-                            <br>";
+                            <br>
+                            <a href='AccessoCambioPassword.php'>Cambia Password</a><br>";
                     }
                 }
                 else if($NRigheA > 0){
