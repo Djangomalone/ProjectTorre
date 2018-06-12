@@ -16,9 +16,11 @@
                 $Pass_Cript = sha1($salt . $Pass);
                 if($Tabella == 'A'){
                     $ModificaLezione = mysqli_query($connection, "UPDATE `admin` SET `Password` = '$Pass_Cript'");
+                    echo "Password cambiata con successo! Prego, effettuate con la nuova password il <a href='index.php'>login</a>";
                 }
                 else if($Tabella == 'U'){
                     $ModificaLezione = mysqli_query($connection, "UPDATE `utente` SET `Password` = '$Pass_Cript'");
+                    echo "Password cambiata con successo! Prego, effettuate con la nuova password il <a href='index.php'>login</a>";
                 }
                 else{
                     echo "Qualcosa è andato storto";

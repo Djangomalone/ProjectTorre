@@ -42,9 +42,7 @@
                                 <a href='AdminLezioni.php'>Lezioni</a><br>
                                 <a href='AdminControllaPrenotazioni.php'>Prenotazioni</a><br>
                                 <a href='AdminAccount.php'>Account</a><br>
-                                <a href=''></a><br>
-                                <a href=''></a><br>
-                                <a href=''></a><br>
+                                <a href='AdminAbbonamenti.php'>Abbonamenti</a><br>
                                 ";
                     }
                 }
