@@ -12,12 +12,12 @@
         Inserisci una descrizione:<br>
         <input type="text" name="DescrizioneLezione"><br>
         Inserisci Maestro:
-        <select name="Maestrp" id="Selettore">
+        <select name="Maestro" id="Selettore">
             <?php
                 include('dbconnection.php');
                 $Maestri = mysqli_query($connection, "SELECT * FROM admin");
                 while($row = $Maestri->fetch_assoc()){
-                    echo "<option>". $row['NomeAdmin'] ."</option>";
+                    echo "<option value='". $row['Id_Admin'] ."'>". $row['NomeAdmin'] ."</option>";
                 }
             ?>
         </select><br>

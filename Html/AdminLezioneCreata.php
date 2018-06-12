@@ -10,7 +10,7 @@
             session_start();
             $Data = mysqli_real_escape_string($connection, $_POST['DataLezione']);
             $Ora = mysqli_real_escape_string($connection, $_POST['OraLezione']);
-            $Id_Admin = $_SESSION['Id_Admin'];
+            $Id_Admin = mysqli_real_escape_string($connection, $_POST['Maestro']);
             $Descrizione = mysqli_real_escape_string($connection, $_POST['DescrizioneLezione']);
             $ResultControllo = mysqli_query($connection, "SELECT * FROM lezione WHERE Data_Lezione = '$Data' AND Ora_Lezione = '$Ora'");
             $NRigheControllo = mysqli_num_rows($ResultControllo);
