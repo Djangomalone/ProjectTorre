@@ -12,17 +12,16 @@
             $Ora = mysqli_real_escape_string($connection, $_POST['Ora']);
             $Nome = mysqli_real_escape_string($connection, $_POST['NomeUtente']);
             $Cognome = mysqli_real_escape_string($connection, $_POST['CognomeUtente']);
-            echo "$Nome $Cognome $Data $Ora";
             $Admin = $_SESSION['Id_Admin'];
             $ControlloUtente = mysqli_query($connection, "SELECT * FROM utente WHERE NomeUtente = '$Nome' AND CognomeUtente = '$Cognome'");
             $NUtente = mysqli_num_rows($ControlloUtente);
             $ControlloLezione = mysqli_query($connection, "SELECT * FROM lezione WHERE Data_Lezione = '$Data' AND Ora_Lezione = '$Ora'");
             $NLezione = mysqli_num_rows($ControlloLezione);
-            if(NUtente > 0){
+            if($NUtente > 0){
                 while($row = $ControlloUtente->fetch_assoc()){
                         $Utente = $row['Id_Utente'];
                     }
-                if(NLezione > 0){
+                if($NLezione > 0){
                     while($row = $ControlloLezione->fetch_assoc()){
                         $Lezione = $row['Id_Lezione'];
                     }
