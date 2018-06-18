@@ -11,8 +11,8 @@
         <a href="AdminCreaAccountU.php">Crea Account Utente</a><br>
         <a href="AdminCreaAccountA.php">Crea Account Maestro</a><br>
         <a href="AdminControllaAccount.php">Controlla Account</a><br>
-        <a href="AccessoCambioPassword.php">Cambia Password</a><br>
-        <form action="HomePage.php">
+        <a href="../AccessoCambioPassword.php">Cambia Password</a><br>
+        <form action="../HomePage.php">
             <button>
                 Torna alla Home
             </button>

@@ -6,7 +6,7 @@
     </head>
     <body>
         <?php
-            include('dbconnection.php');
+            include('../dbconnection.php');
             session_start();
             $Data = date("Y-m-d");
             $Id = $_SESSION['Id_Admin'];
@@ -58,7 +58,7 @@
                     echo "Nessuna prenotazione presente per le tue lezioni!";
                 }
         ?>
-        <form action="HomePage.php">
+        <form action="../HomePage.php">
             <button>
                 Home
             </button>

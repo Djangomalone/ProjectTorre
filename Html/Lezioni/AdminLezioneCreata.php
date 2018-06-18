@@ -6,7 +6,7 @@
     </head>
     <body>
         <?php
-            include('dbconnection.php');
+            include('../dbconnection.php');
             session_start();
             $Data = mysqli_real_escape_string($connection, $_POST['DataLezione']);
             $Ora = mysqli_real_escape_string($connection, $_POST['OraLezione']);

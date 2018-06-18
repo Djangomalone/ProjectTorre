@@ -14,7 +14,7 @@
         Inserisci Maestro:
         <select name="Maestro" id="Selettore">
             <?php
-                include('dbconnection.php');
+                include('../dbconnection.php');
                 $Maestri = mysqli_query($connection, "SELECT * FROM admin");
                 while($row = $Maestri->fetch_assoc()){
                     echo "<option value='". $row['Id_Admin'] ."'>". $row['NomeAdmin'] ."</option>";

@@ -10,7 +10,7 @@
         </h1>
         <a href="AdminCreaLezioni.php">Crea Lezioni</a><br>
         <a href="AdminControllaLezioni.php">Controlla Lezioni</a><br>
-        <form action="HomePage.php">
+        <form action="../HomePage.php">
             <button>
                 Torna alla Home
             </button>

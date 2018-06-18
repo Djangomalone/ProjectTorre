@@ -1,6 +1,6 @@
 <html>
     <?php
-        include('dbconnection.php');
+        include('../dbconnection.php');
         session_start();
         $LezioneDesiderata = mysqli_real_escape_string($connection, $_POST['bottoneCancella']);
         $_SESSION['LezioneDesiderata'] = $LezioneDesiderata;

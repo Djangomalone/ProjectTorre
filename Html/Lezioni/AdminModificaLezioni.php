@@ -5,7 +5,7 @@
         </title>
     </head>
     <?php
-        include('dbconnection.php');
+        include('../dbconnection.php');
         session_start();
         $LezioneDesiderata = mysqli_real_escape_string($connection, $_POST['bottoneModifica']);
         $_SESSION['LezioneDesiderata'] = $LezioneDesiderata;

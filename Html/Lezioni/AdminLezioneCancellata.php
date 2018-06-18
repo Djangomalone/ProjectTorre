@@ -6,7 +6,7 @@
     </head>
     <body>
         <?php
-        include('dbconnection.php');
+        include('../dbconnection.php');
         session_start();
         $Lezione = $_SESSION['LezioneDesiderata'];
         $CancellazionePrenotazioni = mysqli_query($connection, "DELETE FROM prenotazione WHERE Id_Lezione_Prenotazione = $Lezione");

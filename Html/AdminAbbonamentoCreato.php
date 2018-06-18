@@ -22,21 +22,14 @@
                 while($row = $ControlloUtente->fetch_assoc()){
                         $Utente = $row['Id_Utente'];
                     }
-                if($DataS>DataA){
-                    $ControlloAbbonamento = mysqli_query($connection, "SELECT * FROM abbonamento WHERE Id_Utente_Abbonamento = '$Utente' AND Data_Scadenza > $Data AND Lazioni_Rimaste<=(SELECT)");
-                    $NAbbonamento = mysqli_num_rows($ControlloAbbonamento;
-                    if($NAbbonamento>0){
-                        echo "L'abbonamento precedente è ancora attivo! Prego, <a href='AdminCreaAbbonamenti.php'>riprovare</a>";
-                    }
-                    else{
-                        $Inserimento = mysqli_query($connection, "INSERT INTO `presenza` (`Id_Presenza`, `Id_Utente_Presenza`, `Id_Admin_Presenza`, `Id_Lezione_Presenza`) VALUES (NULL, '$Utente', '$Admin', '$Lezione')");
+                if($DataS>$DataA){
+                        $Inserimento = mysqli_query($connection, "INSERT INTO `abbonamento` (`Id_Abbonamento`, `Id_Utente_Abbonamento`, `Tipologia`, `Data_Scadenza`, `Data_Attivazione`, `Lezioni_Rimaste`) VALUES (NULL, '$Utente', '$Descrizione', '$DataS', '$DataA', '$NLezioni')");
                         if($Inserimento>0){
-                            echo "Inserimento andato a buon termine! <a href='AdminSegnaPresenze.php'>Segna un'altra presenza</a>";
+                            echo "Inserimento andato a buon termine! <a href='AdminAbbonamenti.php'>Torna al menù abbonamenti</a>";
                         }
                         else{
                             echo "NINTA DA FER";
                         }
-                    }
                 }
                 else{
                     echo "Data di scadenza e di attivazione non corrette Prego, <a href='AdminCreaAbbonamenti.php'>riprovare</a>";

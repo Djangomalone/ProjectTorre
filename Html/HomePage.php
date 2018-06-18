@@ -27,7 +27,7 @@
                             <br>
                             <a href='Prenotazioni/LookPrenotazioni.php'>Guarda le tue prenotazioni</a>
                             <br>
-                            <a href='LookLezioni.php'>Guarda le tue presenze</a>
+                            <a href='Prenotazioni/LookLezioni.php'>Guarda le tue presenze</a>
                             <br>
                             <a href='AccessoCambioPassword.php'>Cambia Password</a><br>";
                     }
@@ -39,10 +39,10 @@
                                 <h1>
                                     Benvenuto maestro!
                                 </h1>
-                                <a href='AdminLezioni.php'>Lezioni</a><br>
-                                <a href='AdminControllaPrenotazioni.php'>Prenotazioni</a><br>
-                                <a href='AdminAccount.php'>Account</a><br>
-                                <a href='AdminPresenze.php'>Presenze</a><br>
+                                <a href='Lezioni/AdminLezioni.php'>Lezioni</a><br>
+                                <a href='Prenotazioni/AdminControllaPrenotazioni.php'>Prenotazioni</a><br>
+                                <a href='Account/AdminAccount.php'>Account</a><br>
+                                <a href='Presenze/AdminPresenze.php'>Presenze</a><br>
                                 <a href='AdminAbbonamenti.php'>Abbonamenti</a><br>
                                 ";
                     }

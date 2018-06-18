@@ -24,7 +24,7 @@
         <button class="ButtonAdmin">Admin</button>
         <button class="ButtonUtente">Utenti</button>
         <?php
-            include('dbconnection.php');
+            include('../dbconnection.php');
             session_start();
             $Id = $_SESSION['Id_Admin'];
             $Utenti = mysqli_query($connection, "SELECT * FROM utente");

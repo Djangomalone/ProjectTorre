@@ -5,7 +5,7 @@
         </title>
     </head>
     <?php
-        include('dbconnection.php');
+        include('../dbconnection.php');
         session_start();
         $Data = date("d");
         $DataPrecedente = $Data-7;

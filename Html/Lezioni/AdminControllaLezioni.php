@@ -6,7 +6,7 @@
     </head>
     <body>
         <?php
-            include('dbconnection.php');
+            include('../dbconnection.php');
             session_start();
             $Data = date("Y-m-d");
             $Lezioni = mysqli_query($connection, "SELECT * FROM lezione JOIN admin ON (Id_Admin_Lezione = Id_Admin) WHERE Data_Lezione >= '$Data' ORDER BY Data_Lezione");

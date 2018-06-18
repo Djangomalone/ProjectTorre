@@ -6,7 +6,7 @@
     </head>
     <body>
         <?php
-            include('dbconnection.php');
+            include('../dbconnection.php');
             session_start();
             $Nome = mysqli_real_escape_string($connection, $_POST['Nome']);
             $Cognome = mysqli_real_escape_string($connection, $_POST['Cognome']);
