@@ -1,0 +1,65 @@
+@font-face{
+    font-family: Lobster Two;
+    src: url(Lobster.otf)
+}
+
+body {
+    background-color: #f7f7f7;
+    color: #4d423c;
+    font-family: Lobster Two;
+}
+.ParteCentrale{
+    background-color: #f0ede5;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    font-size: 25px;
+    padding: 3%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.BarraAlta{
+    background-color: #f0ede5;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    font-size: 35px;
+    padding: 1%;
+    padding-left: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: left;
+}
+.login{
+    text-align: center;
+}
+.button{
+    font-size: 16px;
+    background-color: #5f4b8b;
+    color: #f7f7f7;
+    text-align: center;
+    padding: 10px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-color: #4d423c;
+    border-radius: 5px;
+}
+.button:hover{
+    background-color: #ec9787;
+    border-color: #ec9787;
+}
+a:link, a:visited{
+    background-color: #c7bc9e;
+    padding: 1% 3%;
+    color: #4d423c;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    border-radius: 5px;
+}
+a:hover{
+    background-color: #dad2be;
+}

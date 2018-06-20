@@ -1,12 +1,14 @@
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="../../CSS/TheCSS.css">         
+        <link rel="shortcut icon" href="../../Images/Desha%20browser.jpg">
         <title>
             Presenza segnata
         </title>
     </head>
     <body>
         <?php
-            include('dbconnection.php');
+            include('../dbconnection.php');
             session_start();
             $Data = date("d-m-Y");
             $DataA = mysqli_real_escape_string($connection, $_POST['DataAtt']);

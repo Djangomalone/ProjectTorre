@@ -1,5 +1,5 @@
 <html>
-    <head>
+    <head><link rel="stylesheet" type="text/css" href="../../CSS/TheCSS.css">         <link rel="shortcut icon" href="../../Images/Desha%20browser.jpg">
         <title>
             Admin Controlla Lezioni
         </title>

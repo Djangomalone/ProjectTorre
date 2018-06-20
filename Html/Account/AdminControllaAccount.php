@@ -1,5 +1,5 @@
 <html>
-    <head>
+    <head><link rel="stylesheet" type="text/css" href="../../CSS/TheCSS.css">         <link rel="shortcut icon" href="../../Images/Desha%20browser.jpg">
         <title>
             Admin Controlla Prenotazioni
         </title>
@@ -8,17 +8,17 @@
     </script>
     <script>
         $(document).ready(() => {
-        $('.AccountUtente').hide();
-        $('.AccountAdmin').hide();
-        $('.ButtonAdmin').on('click', () => {
             $('.AccountUtente').hide();
-            $('.AccountAdmin').show();
-        });
-        $('.ButtonUtente').on('click', () => {
-            $('.AccountUtente').show();
             $('.AccountAdmin').hide();
+            $('.ButtonAdmin').on('click', () => {
+                $('.AccountUtente').hide();
+                $('.AccountAdmin').show();
+            });
+            $('.ButtonUtente').on('click', () => {
+                $('.AccountUtente').show();
+                $('.AccountAdmin').hide();
+            });
         });
-});
     </script> 
     <body>
         <button class="ButtonAdmin">Admin</button>
