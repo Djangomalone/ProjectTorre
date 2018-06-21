@@ -10,6 +10,14 @@
             session_start();
         ?>
     </head>
+    <div class="BarraAlta">
+            <h1>
+               Desha Ashtanga Yoga
+            </h1>
+            
+                <img src="../Images/Logo%20Desha.jpg" width="48" height="48" href="www.dayoga.it">
+            </a>
+        </div>
     <form method="post" action="AdminAbbonamentoCreato.php">
         Inserisci data di attivazione: <br>
         <input type="date" name="DataAtt" required><br>

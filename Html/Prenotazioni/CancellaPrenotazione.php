@@ -1,4 +1,21 @@
 <html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="../CSS/TheCSS.css">
+        <link rel="shortcut icon" href="../Images/Desha%20browser.jpg">
+        <meta charset="UTF-8">
+        <title>
+            Desha Home Page
+        </title>
+    </head>
+    <body>
+        <div class="BarraAlta">
+            <h1>
+               Desha Ashtanga Yoga
+            </h1>
+            
+                <img src="../Images/Logo%20Desha.jpg" width="48" height="48" href="www.dayoga.it">
+            </a>
+        </div>
     <?php
         include('../dbconnection.php');
         session_start();
@@ -15,4 +32,5 @@
             }
         }
     ?>
+    </body>
 </html>

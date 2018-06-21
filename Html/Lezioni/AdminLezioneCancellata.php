@@ -5,6 +5,14 @@
         </title>
     </head>
     <body>
+        <div class="BarraAlta">
+            <h1>
+               Desha Ashtanga Yoga
+            </h1>
+            
+                <img src="../Images/Logo%20Desha.jpg" width="48" height="48" href="www.dayoga.it">
+            </a>
+        </div>
         <?php
         include('../dbconnection.php');
         session_start();

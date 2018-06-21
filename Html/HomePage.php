@@ -12,9 +12,6 @@
             <h1>
                Desha Ashtanga Yoga
             </h1>
-            <a href="https://www.dayoga.it">
-                <img src="../Images/Logo%20Desha.jpg" width="48" height="48" href="www.dayoga.it">
-            </a>
         </div>
         <div class='ParteCentrale'>
         <?php
