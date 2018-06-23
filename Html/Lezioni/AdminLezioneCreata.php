@@ -9,10 +9,8 @@
             <h1>
                Desha Ashtanga Yoga
             </h1>
-            
-                <img src="../Images/Logo%20Desha.jpg" width="48" height="48" href="www.dayoga.it">
-            </a>
         </div>
+        <div class="ParteCentrale">
         <?php
             include('../dbconnection.php');
             session_start();
@@ -24,7 +22,7 @@
             $NRigheControllo = mysqli_num_rows($ResultControllo);
             if($NRigheControllo>0){
                 echo "LEZIONE ESISTENTE. INSERIRNE UN'ALTRA";
-                echo "<form action='AdminCreaLezioni.php'><button>Torna indietro</button></form>";
+                echo "<form action='AdminCreaLezioni.php'><button class='button'>Torna indietro</button></form>";
             }
             else{
                 $Inserimento = mysqli_query($connection, "INSERT INTO `lezione` (`Id_Lezione`, `Id_Admin_Lezione`, `Data_Lezione`, `Ora_Lezione`, `Descrizione`) VALUES (NULL, '$Id_Admin', '$Data', '$Ora', '$Descrizione')");
@@ -36,5 +34,6 @@
                 }
             }
         ?>
+        </div>
     </body>
 </html>

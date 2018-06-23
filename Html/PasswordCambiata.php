@@ -9,10 +9,8 @@
             <h1>
                Desha Ashtanga Yoga
             </h1>
-            
-                <img src="../Images/Logo%20Desha.jpg" width="48" height="48" href="www.dayoga.it">
-            </a>
         </div>
+        <div class="ParteCentrale">
         <?php
             include('dbconnection.php');
             session_start();
@@ -38,5 +36,6 @@
                 echo "Le due password non coincidono! <a href='CambioPassword.php'>Riprova</a>";
             }
         ?>
+        </div>
     </body>
 </html>

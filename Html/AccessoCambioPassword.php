@@ -11,14 +11,16 @@
             <h1>
                Desha Ashtanga Yoga
             </h1>
-            
-                <img src="../Images/Logo%20Desha.jpg" width="48" height="48" href="www.dayoga.it">
-            </a>
         </div>
-        <form action="CambioPassword.php" method="post">
-            Inserisci la vecchia password:
-            <input type="password" name="Password" required>
-            <input type="submit" value="Controlla">
-        </form>
+        <div class="ParteCentrale">
+            <form action="CambioPassword.php" method="post">
+                Inserisci la vecchia password:
+                <input type="password" name="Password" required>
+                <input type="submit" class='button' value="Controlla">
+            </form>
+            <form action="HomePage.php">
+                <input type="submit" class="button" value="Home">
+            </form>
+        </div>
     </body>
 </html>

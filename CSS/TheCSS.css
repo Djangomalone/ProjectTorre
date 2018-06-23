@@ -14,7 +14,7 @@ body {
     border-top-right-radius: 0px;
     border-bottom-right-radius: 25px;
     border-bottom-left-radius: 25px;
-    font-size: 25px;
+    font-size: 20px;
     padding: 3%;
     margin-left: 10%;
     margin-right: 10%;
@@ -26,11 +26,10 @@ body {
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
     font-size: 35px;
+    padding: 0.1%;
     padding-left: 2%;
     margin-left: 10%;
     margin-right: 10%;
-    margin-top: 1%;
-    margin-bottom: 1%;
     text-align: left;
 }
 .login{
@@ -44,7 +43,6 @@ body {
     padding: 10px;
     transition-duration: 0.4s;
     cursor: pointer;
-    border-color: #4d423c;
     border-radius: 5px;
 }
 .button:hover{
@@ -60,7 +58,21 @@ a:link, a:visited{
     display: inline-block;
     position: relative;
     border-radius: 5px;
+    margin-top: 1%;
 }
 a:hover{
     background-color: #dad2be;
+}
+table{
+    text-align: center;
+    border-color: #4d423c;
+    font-size: 20px;
+    width: 100%;
+}
+tr, td{
+    border: 1px solid black;
+    padding: 0.5%;
+}
+.lezioni{
+    text-align: center;
 }

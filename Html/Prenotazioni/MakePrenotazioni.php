@@ -11,14 +11,11 @@
             <h1>
                Desha Ashtanga Yoga
             </h1>
-            
-                <img src="../Images/Logo%20Desha.jpg" width="48" height="48" href="www.dayoga.it">
-            </a>
         </div>
+    <div class='ParteCentrale'>
     <?php
         include('../dbconnection.php');
         $Data = date("Y-m-d");
-        echo $Data;
         echo "<br>";
         $Result = mysqli_query($connection, "SELECT * FROM lezione JOIN admin ON (lezione.Id_Admin_Lezione = admin.Id_Admin) WHERE Data_Lezione > '$Data' ORDER BY Data_Lezione");
         $NRighe = mysqli_num_rows($Result);
@@ -60,7 +57,7 @@
                         ". $row["Descrizione"] ."
                     </td>
                     <td>
-                        <button type='submit' name='bottonePrenota' value=". $row["Id_Lezione"] .">
+                        <button class='button' type='submit' name='bottonePrenota' value=". $row["Id_Lezione"] .">
                         Seleziona!
                         </button>
                     </td>
@@ -75,9 +72,10 @@
             </form>";
     ?>
     <form action="../HomePage.php">
-            <button>
+            <button class='button'>
                 Home
             </button>
         </form>
+        </div>
     </body>
 </html>

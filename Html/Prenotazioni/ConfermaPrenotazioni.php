@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="../CSS/TheCSS.css">
+        <link rel="stylesheet" type="text/css" href="../../CSS/TheCSS.css">
         <link rel="shortcut icon" href="../Images/Desha%20browser.jpg">
         <meta charset="UTF-8">
         <title>
@@ -12,10 +12,8 @@
             <h1>
                Desha Ashtanga Yoga
             </h1>
-            
-                <img src="../Images/Logo%20Desha.jpg" width="48" height="48" href="www.dayoga.it">
-            </a>
         </div>
+      <div class="ParteCentrale">
     <?php
         include('../dbconnection.php');
         session_start();
@@ -31,13 +29,14 @@
         else{
             if($LRighe > 0){
                 while($rowL = $ResultL->fetch_assoc()){
-                    echo "Confermi di voler prenotare questa lezione? <br><br> Data: ". $rowL['Data_Lezione'] ." Ora: ". $rowL['Ora_Lezione'] ." Descrizione: ". $rowL['Descrizione'] ."<br>";
-                    echo "<form method='post' action='MakePrenotazioni.php'> <button type='submit' name='bottoneIndietro'> Torna indietro</button></form>";
-                    echo "<form method='post' action='PrenotazioneEseguita.php'><button type='submit' name='bottoneAvanti'>Conferma</button></form>";
+                    echo "Confermi di voler prenotare questa lezione? <br><br> Data: ". $rowL['Data_Lezione'] ." Ora: ". $rowL['Ora_Lezione'] ." Descrizione: ". $rowL['Descrizione'] ."<br><br>";
+                    echo "<form method='post' action='MakePrenotazioni.php'> <button class='button' type='submit' name='bottoneIndietro'> Torna indietro</button></form>";
+                    echo "<form method='post' action='PrenotazioneEseguita.php'><button class='button' type='submit' name='bottoneAvanti'>Conferma</button></form>";
                 }
             }   
         }
         
     ?>
+        </div>
     </body>
 </html>

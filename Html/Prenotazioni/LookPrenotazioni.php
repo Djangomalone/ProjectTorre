@@ -11,10 +11,8 @@
             <h1>
                Desha Ashtanga Yoga
             </h1>
-            
-                <img src="../Images/Logo%20Desha.jpg" width="48" height="48" href="www.dayoga.it">
-            </a>
         </div>
+        <div class="ParteCentrale">
         <?php
             include('../dbconnection.php');
             session_start();
@@ -53,7 +51,7 @@
                             ". $row["Descrizione"] . "
                             </td>
                             <td>
-                                <button type='submit' name='bottoneCancella' value=". $row["Id_Prenotazione"] .">
+                                <button class='button' type='submit' name='bottoneCancella' value=". $row["Id_Prenotazione"] .">
                                     Seleziona
                                 </button>
                             </td>
@@ -66,9 +64,10 @@
             echo "</form>";
         ?>
         <form action="../HomePage.php">
-            <button>
+            <button class='button'>
                 Home
             </button>
         </form>
+        </div>
     </body>
 </html>

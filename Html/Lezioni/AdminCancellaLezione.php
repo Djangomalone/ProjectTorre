@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="../CSS/TheCSS.css">
+        <link rel="stylesheet" type="text/css" href="../../CSS/TheCSS.css">
         <link rel="shortcut icon" href="../Images/Desha%20browser.jpg">
         <meta charset="UTF-8">
         <title>
@@ -12,10 +12,8 @@
             <h1>
                Desha Ashtanga Yoga
             </h1>
-            
-                <img src="../Images/Logo%20Desha.jpg" width="48" height="48" href="www.dayoga.it">
-            </a>
         </div>
+        <div class="ParteCentrale">
     <?php
         include('../dbconnection.php');
         session_start();
@@ -32,5 +30,6 @@
             }
         }
     ?>
+        </div>
     </body>
 </html>

@@ -1,5 +1,7 @@
 <html>
-    <head><link rel="stylesheet" type="text/css" href="../../CSS/TheCSS.css">         <link rel="shortcut icon" href="../../Images/Desha%20browser.jpg">
+    <head>
+        <link rel="stylesheet" type="text/css" href="../../CSS/TheCSS.css">         
+        <link rel="shortcut icon" href="../../Images/Desha%20browser.jpg">
         <title>
             Admin Controlla Lezioni
         </title>
@@ -9,10 +11,8 @@
             <h1>
                Desha Ashtanga Yoga
             </h1>
-            
-                <img src="../Images/Logo%20Desha.jpg" width="48" height="48" href="www.dayoga.it">
-            </a>
         </div>
+        <div class="ParteCentrale">
         <?php
             include('../dbconnection.php');
             session_start();
@@ -60,14 +60,14 @@
                             </td>
                             <form method = 'post' action='AdminModificaLezioni.php'>
                             <td>
-                                <button type='submit' name='bottoneModifica' value=". $row["Id_Lezione"] .">
+                                <button class='button' type='submit' name='bottoneModifica' value=". $row["Id_Lezione"] .">
                                     Seleziona
                                 </button>
                             </td>
                             </form>
                             <form method = 'post' action='AdminCancellaLezione.php'>
                             <td>
-                                <button type='submit' name='bottoneCancella' value=". $row["Id_Lezione"] .">
+                                <button class='button' type='submit' name='bottoneCancella' value=". $row["Id_Lezione"] .">
                                     Seleziona
                                 </button>
                             </td>
@@ -80,9 +80,10 @@
                 }
         ?>
         <form action="AdminLezioni.php">
-            <button>
+            <button class='button'>
                 Menù Lezioni
             </button>
         </form>
+        </div>
     </body>
 </html>
