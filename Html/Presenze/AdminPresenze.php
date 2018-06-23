@@ -9,19 +9,18 @@
             <h1>
                Desha Ashtanga Yoga
             </h1>
-            
-                <img src="../Images/Logo%20Desha.jpg" width="48" height="48" href="www.dayoga.it">
-            </a>
         </div>
+        <div class="ParteCentrale">
         <h1>
             Segna e controlla le presenze degli utenti
         </h1>
-        <a href="AdminControllaPresenze.php">Controlla presenze</a><br>
-        <a href="AdminSegnaPresenze.php">Segna presenze</a>
+        <a href="AdminControllaPresenze.php">Controlla presenze</a>
+        <a href="AdminSegnaPresenze.php">Segna presenze</a><br><br>
         <form action="../HomePage.php">
-            <button>
+            <button class="button">
                 Torna alla Home
             </button>
         </form>
+        </div>
     </body>
 </html>

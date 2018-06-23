@@ -9,10 +9,8 @@
             <h1>
                Desha Ashtanga Yoga
             </h1>
-            
-                <img src="../Images/Logo%20Desha.jpg" width="48" height="48" href="www.dayoga.it">
-            </a>
         </div>
+        <div class="ParteCentrale">
         <?php
             include('../dbconnection.php');
             session_start();
@@ -72,9 +70,10 @@
                 }
         ?>
         <form action="AdminPresenze.php">
-            <button>
+            <button class="button">
                 Menù Presenze
             </button>
         </form>
+        </div>
     </body>
 </html>

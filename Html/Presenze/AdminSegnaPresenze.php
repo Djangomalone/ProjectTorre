@@ -9,10 +9,8 @@
             <h1>
                Desha Ashtanga Yoga
             </h1>
-            
-                <img src="../Images/Logo%20Desha.jpg" width="48" height="48" href="www.dayoga.it">
-            </a>
         </div>
+        <div class="ParteCentrale lezioni">
     <?php
         include('../dbconnection.php');
         session_start();
@@ -55,15 +53,16 @@
                     echo "<option value='". $rowCognome['CognomeUtente'] ."'>". $rowCognome['CognomeUtente'] ."</option>";
                 }
     echo "
-        </select>
-        <input type='submit' value='Segna presenza'>
+        </select><br><br>
+        <input class='button' type='submit' value='Segna presenza'>
     </form>";
     ?>
     
     <form action="AdminPresenze.php">
-        <button>
+        <button class="button">
             Torna al menù presenze
         </button>
     </form>
+        </div>
     </body>
 </html>

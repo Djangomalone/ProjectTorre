@@ -25,12 +25,10 @@
             <h1>
                Desha Ashtanga Yoga
             </h1>
-            
-                <img src="../Images/Logo%20Desha.jpg" width="48" height="48" href="www.dayoga.it">
-            </a>
         </div>
-        <button class="ButtonAdmin">Admin</button>
-        <button class="ButtonUtente">Utenti</button>
+        <div class="ParteCentrale">
+        <button class="ButtonAdmin button">Admin</button>
+        <button class="ButtonUtente button">Utenti</button>
         <?php
             include('../dbconnection.php');
             session_start();
@@ -131,9 +129,10 @@
         echo "</table>";
         ?>
         <form action="AdminAccount.php">
-            <button>
+            <button class="button">
                 Menù Account
             </button>
         </form>
+        </div>
     </body>
 </html>

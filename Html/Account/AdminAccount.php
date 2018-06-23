@@ -1,5 +1,7 @@
 <html>
-    <head><link rel="stylesheet" type="text/css" href="../../CSS/TheCSS.css">         <link rel="shortcut icon" href="../../Images/Desha%20browser.jpg">
+    <head>
+        <link rel="stylesheet" type="text/css" href="../../CSS/TheCSS.css">         
+        <link rel="shortcut icon" href="../../Images/Desha%20browser.jpg">
         <title>
             Admin Account
         </title>
@@ -9,21 +11,20 @@
             <h1>
                Desha Ashtanga Yoga
             </h1>
-            
-                <img src="../Images/Logo%20Desha.jpg" width="48" height="48" href="www.dayoga.it">
-            </a>
         </div>
+        <div class="ParteCentrale">
         <h1>
             Crea, controlla e gestisci gli account!
         </h1>
-        <a href="AdminCreaAccountU.php">Crea Account Utente</a><br>
-        <a href="AdminCreaAccountA.php">Crea Account Maestro</a><br>
-        <a href="AdminControllaAccount.php">Controlla Account</a><br>
-        <a href="../AccessoCambioPassword.php">Cambia Password</a><br>
+        <a href="AdminCreaAccountU.php">Crea Account Utente</a>
+        <a href="AdminCreaAccountA.php">Crea Account Maestro</a>
+        <a href="AdminControllaAccount.php">Controlla Account</a>
+        <a href="../AccessoCambioPassword.php">Cambia Password</a><br><br>
         <form action="../HomePage.php">
-            <button>
+            <button class="button">
                 Torna alla Home
             </button>
         </form>
+        </div>
     </body>
 </html>

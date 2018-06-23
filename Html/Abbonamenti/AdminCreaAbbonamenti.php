@@ -10,14 +10,13 @@
             session_start();
         ?>
     </head>
+    <body>
     <div class="BarraAlta">
             <h1>
                Desha Ashtanga Yoga
             </h1>
-            
-                <img src="../Images/Logo%20Desha.jpg" width="48" height="48" href="www.dayoga.it">
-            </a>
         </div>
+    <div class="ParteCentrale lezioni">
     <form method="post" action="AdminAbbonamentoCreato.php">
         Inserisci data di attivazione: <br>
         <input type="date" name="DataAtt" required><br>
@@ -43,13 +42,15 @@
         Inserisci una descrizione:<br>
         <input type="text" name="DescrizioneAbbonamento"><br>
         Inserisci il numero di lezioni:<br>
-        <input type="number" name="NLezioni" min="4" max="40" value="4" required><br>
-        <input type="submit" value="Crea abbonamento">
+        <input type="number" name="NLezioni" min="4" max="40" value="4" required><br><br>
+        <input class="button" type="submit" value="Crea abbonamento">
     </form>
     <form action="AdminAbbonamenti.php">
-        <button>
+        <button class="button">
             Torna al menù abbonamenti
         </button>
     </form>
+        </div>
+    </body>
 </html>
         
