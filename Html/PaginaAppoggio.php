@@ -4,7 +4,10 @@
             include('dbconnection.php');
             session_start();
             $_SESSION['varEmail'] = mysqli_real_escape_string($connection, $_POST['email']);
-            $_SESSION['varPassword'] = mysqli_real_escape_string($connection, $_POST['password']);
+            $Password = mysqli_real_escape_string($connection, $_POST['password']);
+            $salt = "YL!_D55v@3cnL6Gro6dAvLRgADpSC)B%@enk_Orz";
+            $Pass_Cript = sha1($salt . $Password);
+            $_SESSION['varPassword'] = $Pass_Cript;
         ?>
     </form>
 </html>
