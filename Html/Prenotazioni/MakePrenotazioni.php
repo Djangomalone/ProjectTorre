@@ -33,7 +33,10 @@
                         Tenuta da
                     </th>
                     <th>
-                        Descrizione
+                        Difficoltà
+                    </th>
+                    <th>
+                        Per
                     </th>
                     <th>
                         Scegli
@@ -52,6 +55,9 @@
                     </td>
                     <td>
                         " . $row["NomeAdmin"] ."
+                    </td>
+                    <td>
+                        " . $row["Pubblico"] ."
                     </td>
                     <td>
                         ". $row["Descrizione"] ."

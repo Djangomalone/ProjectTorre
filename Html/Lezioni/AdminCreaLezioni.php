@@ -18,6 +18,12 @@
         <input type="date" name="DataLezione" required><br>
         Inserisci ora: <br>
         <input type="time" name="OraLezione" required><br>
+        Inserisci il pubblico a cui è rivolta:<br>
+        <select name="Pubblico" id="Selettore">
+            <option value="Tutti">Tutti</option>
+            <option value="Esordienti">Esordienti</option>
+            <option value="Esperti">Esperti</option>
+        </select><br>
         Inserisci una descrizione:<br>
         <input type="text" name="DescrizioneLezione"><br>
         Inserisci Maestro:

@@ -24,6 +24,7 @@
             $Ora = $Arrow['Ora_Lezione'];
             $Descrizione = $Arrow['Descrizione'];
             $Maestro = $Arrow['Id_Admin_Lezione'];
+            $Pubblico = $Arrow['Pubblico'];
         }
         echo "<form method='post' action='AdminLezioneModificata.php'>
         Inserisci data: <br>
@@ -32,11 +33,17 @@
         <input type='time' name='OraLezione' required value='$Ora'><br>
         Inserisci una descrizione:<br>
         <input type='text' name='DescrizioneLezione' value='$Descrizione'><br>
+        Inserisci il pubblico a cui è rivolta:<br>
+        <select name='Pubblico' id='Selettore'>
+            <option value='Tutti'>Tutti</option>
+            <option value='Esordienti'>Esordienti</option>
+            <option value='Esperti'>Esperti</option>
+        </select><br>
         Inserisci Maestro:
-        <select name='Maestrp' id='Selettore'>";
-                $Maestri = mysqli_query($connection, 'SELECT * FROM admin');
-                while($row = $Maestri->fetch_assoc()){
-                    echo '<option>'. $row['NomeAdmin'] .'</option>';
+        <select name='Maestro' id='Selettore'>";
+                $Maestri = mysqli_query($connection, "SELECT * FROM admin");
+                while($rowy = $Maestri->fetch_assoc()){
+                    echo "<option value='". $rowy['Id_Admin'] ."'>". $rowy['NomeAdmin'] ."</option>";
                 }
     echo "
         </select><br>
